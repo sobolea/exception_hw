@@ -57,7 +57,7 @@ public class task{
     public static String[] inputData() throws IncorrectSizeException{
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите данные через пробел: фамилия, имя, отчество, дата рождения, номер телефона, пол");
-   /*дописать */         System.out.println("В формате:\n...");   
+        System.out.println("В формате:\nФамилия Имя Отчество дд.мм.гг 12345 f(m)");   
         String str = sc.nextLine();
         sc.close();
         int size = str.split(" ").length;
@@ -87,10 +87,9 @@ public class task{
         } catch (IllegalArgumentException e) {
             throw new FormatException("Incorrect input of phone number");
         }
-//         System.out.println(arr[5]);
-// /* не работает */        if(arr[5] == "f" || arr[5] == "m") info.add(arr[5]);
-//         else throw new FormatException(String.format("Must be f or m. You have %s", arr[5]));
-        info[7] =(arr[5]);
+        System.out.println(arr[5]);
+       if(arr[5].equals("f") || arr[5].equals("m")) info[7] =(arr[5]);
+        else throw new FormatException(String.format("Must be f or m. You have %s", arr[5]));
         return info;
     }
 
@@ -100,8 +99,4 @@ public class task{
 
 }
 
-//Как сделать чтобы после IncorrectSizeException можно было ещё  раз запустить считывание данных????
-
 //Разделение даты через точку не работает
-
-// Не проходит проверку пол
